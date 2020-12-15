@@ -15,12 +15,12 @@ li {
 
 
 /*header==========================================*/
+/*
 header {
     width: 100%;
     height: 80px;
     position: fixed;
 }
-/*첫번째 nav*/
 #first_menu {
     max-width: 100%;
     display: flex;
@@ -31,29 +31,53 @@ header {
     width: 200px;
     height: 70px;
 }
-#title_form {
-    margin-left: 20%;
-    margin-top: 1%;
-}
 #GSM_logo {
     margin-left: 33%;
-    margin-top: 1%;
+    margin-top: 0.5%;
 }
-/*두번째 nav*/
-#second_menu {
-    max-width: 100%;
+#list_icon img {
+    width: 40px;
+    height: auto;
+}
+#list_icon {
+    margin-left: 10%;
+}
+*/
+
+body{
+    margin: 0;
+    padding: 0;
     display: flex;
-    height: 80px;
+}
+
+nav{
+    width: 100%;
+    display: flex;
     justify-content: center;
+    position: relative;
 }
-#main_menu > li {
-    width: 200px;
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#main-menu,
+#sub-menu{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#main-menu > li{
     float: left;
-    background: #35477d;
+    background:#35477d;
 }
-#main_menu > li > a {
+
+#main-menu > li > a{
     font-size: 0.85rem;
-    color: rgba(225, 225, 225, 0.85);
+    color: rgba(255, 255, 255, 0.85);
     text-align: center;
     text-decoration: none;
     letter-spacing: 0.05em;
@@ -62,30 +86,40 @@ header {
     border-right: 1px solid rgba(0, 0, 0, 0.15);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
-#main_menu > li:nth-child(1) > a {
+
+#main-menu > li:nth-child(1) > a{
     border-left: 1px solid rgba(0, 0, 0, 0.15);
 }
-.sub_menu {
+
+#sub-menu {
     position: absolute;
-    background: #182952;
+    background:#182952;
     opacity: 0;
     visibility: hidden;
     transition: all 0.125s ease-in;
+    height: 0px;
 }
-.sub_menu > li {
+
+#sub-menu > li {
     padding: 16px 28px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
-.sub_menu > li > a {
-    color: rgba(225, 225, 225, 0.6);
+
+#sub-menu > li > a{
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
 }
-#main_menu > li:hover .sub_menu {
+
+#main-menu > li:hover #sub-menu{
     opacity: 1;
     visibility: visible;
 }
-.sub_menu > li > a:hover {
+
+#sub-menu > li > a:hover {
     text-decoration: underline;
 }
 
-/*section 시작=================================================*/
+section {
+    columns: 15em;
+    padding: 2em 12em;
+}
