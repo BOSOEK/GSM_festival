@@ -3,9 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GSM</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <style>
+        /*초기화===============================*/
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            text-decoration: none;
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /*header==========================================*/
+        header {
+            position: fixed;
+            width: 100%;
+            height: 100px;
+            z-index: 100;
+        }
+        nav {
+            display: flex;
+            width: 96%;
+            height: 100px;
+            justify-content: space-between;
+        }
+        #GSM_logo img {
+            width: 150px;
+            height: 40px;
+        }
+        #GSM_logo {
+            margin-left: 4%;
+            margin-top: 2%;
+        }
+        #list_icon {
+            margin-top: 2.3%;
+        }
+        #list_icon img {
+            width: 25px;
+            height: auto;
+        }
+        #hiddin_list {
+            width: 0px;
+            height: 0px;
+        }
+
+
+        /*article===============================================================*/
+        #sec1 {
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #right_hiddin {
+            height: 100%;
+            width: 40%;
+            background-color: rgb(35, 35, 94);
+            transition: width 0.8s;
+            position: absolute;
+            /*margin-left: 61%;*/
+            margin-left: 100%;
+        }
+
+        #video {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /*목록 버튼 누르면 오른쪽 히든 창 나오기*/
+
+
+        #right_hiddin_ul {
+            margin-top: 30%;
+            margin-left: 10%;
+            height: 350px;
+            margin-bottom: 5%;
+            font-family: 'Black Han Sans', sans-serif;
+        }
+        .h2 {
+            font-size: 40px;
+            margin-top: 8%;
+            margin-bottom: 8%;
+            margin-left: 47px;
+        }
+        .h2_midde {
+            font-size: 40px;
+        }
+        .h2_midde img {
+            width: 35px;
+            height: auto;
+        }
+        .h2:hover {
+            text-decoration: underline;
+        }
+        .h3 {
+            font-size: 25px;
+            transition: 0.6s;
+            margin-top: 3%;
+            margin-bottom: 3%;
+        }
+        .h3:hover {
+            text-decoration: underline;
+        }
+        #h2_hiddin {
+            margin-left: 47px;
+            display: none;
+        }
+        .border_radio {
+            font-size: 15px;
+            border: 2px solid white;
+            padding: 3px 10px;
+            border-top-right-radius: 10px 15px;
+            border-top-left-radius: 10px 15px;
+            border-bottom-right-radius: 10px 15px;
+            border-bottom-left-radius: 10px 15px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        #border_radio_div {
+            margin-top: 150px;
+            margin-left: 400px;
+        }
+        main {
+            text-align: center;
+        }
+        form {
+            margin-top: 10%;
+        }
+        .input {
+            height: 50px;
+            width: 430px;
+            border: 1px solid black;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 15px;
+            padding-left: 20px;
+        }
+        #login_btn {
+            height: 50px;
+            width: 450px;
+            background-color: rgb(45, 219, 88);
+            border: none;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <a href="../index.html" id="GSM_logo"><img src="../Image/GSM.PNG" alt="GSM_logo"></a>
+            <a href="#" id="list_icon"><img src="../Image/list_icon.png" id="list_icon_img" alt="리스트아이콘"></a>
+        </nav>
+    </header>
+    <article>
+        <section id="sec1">
+            <div id="right_hiddin">
+                <ul id="right_hiddin_ul">
+                    <li class="h2"><a href="./Instrument.html">Exercise sequence</a></li>
+                    <li class="h2"><a href="./applyStudy.html">Self-study</a></li>
+                    <li class="h2_midde"><a href="#" id="h2_hid_img"><img id="up_down_img" src="../Image/down_arrow.png" alt="아래 화살표"> About school life</a> 
+                        <ul id="h2_hiddin">
+                            <li class="h3"><a href="./facilities.html">Inconvenient facilities</a></li>
+                            <li class="h3"><a href="./Petition.html">Petition</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="border_radio_div">
+                    <a href="./login.html" class="border_radio">login</a>
+                    <a href="./signup.html" class="border_radio">signup</a>
+                </div>
+            </div>
+            <main>
+                <form action="signup">
+                    <h1 style="font-size: 40px; margin-bottom: 50px;">회원가입</h1>
+                    <div>
+                        <input type="id" class="input" placeholder="아이디"><br>
+                        <input type="password" class="input" placeholder="비밀번호"><br>
+                        <input type="password" class="input" placeholder="비밀번호 확인" style="margin-bottom: 25px;"><br>
+                        <a href="./signup.html" style="color: black; margin-left: 320px;">로그인 | login</a><br>
+                        <input type="submit" value="회원가입" id="login_btn">
+                    </div>
+                </form>
+            </main>
+        </section>
+    </article>
+    <script type="text/javascript" src="../script/script_all.js"></script>
+    <script type="text/javascript" src="../script/login_signup.js"></script>
 </body>
 </html>

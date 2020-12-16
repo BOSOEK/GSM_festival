@@ -59,7 +59,7 @@ nav {
 
 #right_hiddin {
     height: 100%;
-    width: 600px;
+    width: 40%;
     background-color: rgb(35, 35, 94);
     transition: width 0.8s;
     position: absolute;
