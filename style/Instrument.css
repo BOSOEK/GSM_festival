@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*초기화===============================*/
 body {
     margin: 0;
@@ -132,4 +133,130 @@ nav {
 #border_radio_div {
     margin-top: 150px;
     margin-left: 400px;
+=======
+/*초기화===============================*/
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+
+
+/*header==========================================*/
+/*
+header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+}
+#first_menu {
+    max-width: 100%;
+    display: flex;
+    height:100px;
+    justify-content: center;
+}
+#GSM_logo img {
+    width: 200px;
+    height: 70px;
+}
+#GSM_logo {
+    margin-left: 33%;
+    margin-top: 0.5%;
+}
+#list_icon img {
+    width: 40px;
+    height: auto;
+}
+#list_icon {
+    margin-left: 10%;
+}
+*/
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#main-menu,
+#sub-menu{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#main-menu > li{
+    float: left;
+    background:#35477d;
+}
+
+#main-menu > li > a{
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: block;
+    padding: 14px 36px;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#main-menu > li:nth-child(1) > a{
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+#sub-menu {
+    position: absolute;
+    background:#182952;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.125s ease-in;
+    height: 0px;
+}
+
+#sub-menu > li {
+    padding: 16px 28px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+#sub-menu > li > a{
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+}
+
+#main-menu > li:hover #sub-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+#sub-menu > li > a:hover {
+    text-decoration: underline;
+}
+
+section {
+    columns: 15em;
+    padding: 2em 12em;
+>>>>>>> fb25a693de3f2c79fc497aaf0b6e87313549be3c
 }

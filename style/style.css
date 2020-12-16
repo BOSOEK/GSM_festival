@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*초기화===============================*/
 body {
     margin: 0;
@@ -132,4 +133,74 @@ nav {
 #border_radio_div {
     margin-top: 150px;
     margin-left: 400px;
+=======
+/*초기화===============================*/
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+/*header==========================================*/
+header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+}
+nav {
+    display: flex;
+    width: 96%;
+    height: 100px;
+    justify-content: space-between;
+}
+#GSM_logo img {
+    width: 150px;
+    height: 40px;
+}
+#GSM_logo {
+    margin-left: 4%;
+    margin-top: 2%;
+}
+#list_icon {
+    margin-top: 2.3%;
+}
+#list_icon img {
+    width: 25px;
+    height: auto;
+}
+#hiddin_list {
+    width: 0px;
+    height: 0px;
+}
+
+
+/*article===============================================================*/
+#sec1 {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#right_hiddin {
+    height: 100vh;
+    width: 600px;
+    background-color: rgb(42, 42, 94);
+    transition: width 0.8s;
+    position: absolute;
+    /*margin-left: 61%;*/
+    margin-left: 100%;
+}
+
+/*목록 버튼 누르면 오른쪽 히든 창 나오기*/
+#list_icon:checked #right_hiddin {
+    width: 300px;
+>>>>>>> fb25a693de3f2c79fc497aaf0b6e87313549be3c
 }
