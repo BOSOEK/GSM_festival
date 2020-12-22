@@ -11,49 +11,31 @@ var con = mysql.createConnection({
 
 var app = express();
 app.set('port', 3000);
-app.use(serverStatic(path.join('public', __dirname, 'public')));
 
 var router = express.Router();
 
-router.route('/process/signup').post(
-    function(req, res) {
-        console.log('/process/signup 호출됨');
-        var paramId = req.body.id || req.query.id;
-        var paramPW = req.body.password || req.query.password;
-        var paramName = req.body.name || req.query.name;
-        var paramClass = req.body.class || req.query.class;
-        var paramDis = req.body.discord || req.query.discord;
-        var paramGit = req.body.githubAddress || req.query.githubAddress;
+app.post('/process/signup', function(req, res) {
+    var id = req.body.id;
+    var password = req.body.password;
+    var grade = req.body.grade;
+    var name = req.body.name;
+    var discord = req.body.discord;
+    var github = req.body.githubAddress;
 
-        addUser(paramId, paramPW, paramName, paramClass, paramDis, paramGit, function(err, result) {
-            
-        })
+    if(!id || !password || !grade || !name) {
+        window.alert("정보를 입력하여주세요");
+        return;
     }
-)
 
-var addUser = function(id, password, name, clas, discord, github, callback) {
-    console.log('addUser 호출');
+    var sql = "INSERT INTO festival (id, pw, grade, name, discord, github) values (?, ?, ?, ?, ?, ?)";
+    var params = [id, password, grade, name, discord, github];
 
-    con.connect(function(err) {
-        if(err) {
-            //오류뜨면 연결해제
-            con.end(function(err) {});
-        }
-        var sql = "INSERT INTO festival (id, password, name, class, discord, github) VALUES (" + id + ", " + password + ", " + name + ", " + clas + ", " + discord + ", " + github + ")";
-        con.query(sql, function(err, result) {
-            if(err) {
-                con.end(function(err) {});
-            }
-            console.log('insert 성공');
-        })
-    });
-}
-/*
-con.connect(function(err) {
-    if(err) throw err;
-    var sql = "CREATE TABLE festival (id VARCHAR(100), password VARCHAR(100), name VARCHAR(100), class VARCHAR(10) PRIMARY KEY, discord VARCHAR(70), github VARCHAR(70))";
-    con.query(sql, function(err, result) {
+    con.query(sql, params, function(err, rows, fields) {
         if(err) throw err;
-        console.log("Table created!");
+        console.log("회원가입 완료됨.");
     });
-});*/
+
+});
+
+http.createServer(function(req, res) {
+}).listen(8000);
