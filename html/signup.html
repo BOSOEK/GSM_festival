@@ -41,11 +41,11 @@
         }
         #GSM_logo img {
             width: 150px;
-            height: 40px;
+            height: 55px;
         }
         #GSM_logo {
             margin-left: 4%;
-            margin-top: 2%;
+            margin-top: 1%;
         }
         #list_icon {
             margin-top: 2.3%;
@@ -65,6 +65,7 @@
             height: 100vh;
             overflow: hidden;
             position: relative;
+            background-color: rgb(235, 233, 233);
         }
 
         #right_hiddin {
@@ -147,21 +148,23 @@
             text-align: center;
         }
         form {
-            margin-top: 10%;
+            margin-top: 5%;
         }
         .input {
             height: 50px;
             width: 430px;
-            border: 1px solid black;
+            border: none;
+            border-bottom: 1px solid gray;
             margin-top: 5px;
             margin-bottom: 5px;
             font-size: 15px;
             padding-left: 20px;
+            font-weight: bold;
         }
         #login_btn {
             height: 50px;
             width: 450px;
-            background-color: rgb(45, 219, 88);
+            background-color: rgb(120, 45, 219);
             border: none;
             font-size: 15px;
             font-weight: bold;
@@ -195,13 +198,16 @@
                 </div>
             </div>
             <main>
-                <form action="signup">
+                <form action="/process/signup" method="post">
                     <h1 style="font-size: 40px; margin-bottom: 50px;">회원가입</h1>
                     <div>
-                        <input type="id" class="input" placeholder="아이디"><br>
-                        <input type="password" class="input" placeholder="비밀번호"><br>
-                        <input type="password" class="input" placeholder="비밀번호 확인" style="margin-bottom: 25px;"><br>
-                        <a href="./signup.html" style="color: black; margin-left: 320px;">로그인 | login</a><br>
+                        <input type="id" class="input" placeholder="아이디" name="id"><br>
+                        <input type="password" class="input" placeholder="비밀번호" name="password"><br>
+                        <input type="text" class="input" placeholder="학년/반/번호" name="grade"><br>
+                        <input type="text" class="input" placeholder="이름" name="name"><br>
+                        <input type="text" class="input" placeholder="디스코드 이름" name="discord"><br>
+                        <input type="text" class="input" placeholder="Github 주소" style="margin-bottom: 25px;" name="githubAddress"><br>
+                        <a href="./login.html" style="color: black; margin-left: 320px;">로그인 | login</a><br>
                         <input type="submit" value="회원가입" id="login_btn">
                     </div>
                 </form>
