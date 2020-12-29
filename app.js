@@ -23,6 +23,9 @@ app.use(express.urlencoded({extended:false}));
 //JSON 본문 구문 분석 (API 클라이언트에서 보낸대로)
 app.use(express.json());
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
 app.set('view engine', 'hbs');
 
 db.connect(function(err) {
@@ -37,8 +40,30 @@ app.get('/', function(req, res) {
     res.status(200).sendFile(__dirname + "/html/index.html");
 });
 
+//회원가입하기 버튼을 눌렀을 때
+app.post('/process/signup', function(req, res) {
+    var {id, password, name, discord, github} = req.body;
+
+    id *= 1;
+    var checkId = id;
+    if(checkId/1000 > 3 || cheekId/1000 < 1) {
+        return;
+    }
+    checkId = id%1000;
+    if(checkId/100>4 || checkId < 1) {
+        return;
+    }
+    checkId = id%100;
+    if(checkId/10>2 || checkId<0) {
+        
+        return;
+    } 
+
+    
+});
+
 //app.use('/', require('./script/pages.js'));
 
-app.listen(9996, function() {
-    console.log("Server Started!");
+http.createServer(app).listen(9996, '172.30.1.58', function() {
+    console.log("서버가 시작됨");
 });
