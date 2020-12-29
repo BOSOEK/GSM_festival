@@ -1,6 +1,8 @@
 const http = require('http');
+const path = require('path');
 const mysql = require('mysql');
 const express = require('express');
+const router = express.Router();
 
 const app = express();
 
@@ -12,6 +14,8 @@ const db = mysql.createConnection( {
     password: '33945',
     database: 'GSM'
 });
+const publicDirectory = path.join(__dirname, './style');
+app.use(express.static(publicDirectory));
 
 //URL 인코딩 본문 구문 분석 (HTML 양식에서 전송 됨)
 app.use(express.urlencoded({extended:false}));
@@ -28,6 +32,10 @@ db.connect(function(err) {
     }
 })
 
-app.listen(6997, function() {
+router.get('/', function(req, res) {
+    res.render('./views/index');
+});
+
+app.listen(7001, function() {
     console.log("Server Started!");
 });
