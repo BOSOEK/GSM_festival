@@ -6,8 +6,6 @@ const router = express.Router();
 
 const app = express();
 
-const server = http.createServer();
-
 const db = mysql.createConnection( {
     host: '192.168.154.1',
     user: 'client',
@@ -32,10 +30,8 @@ db.connect(function(err) {
     }
 })
 
-router.get('/', function(req, res) {
-    res.render('./views/index');
-});
+app.use('/', require('./script/pages.js'));
 
-app.listen(7001, function() {
+app.listen(9996, function() {
     console.log("Server Started!");
 });
