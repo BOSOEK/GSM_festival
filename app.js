@@ -38,8 +38,32 @@ app.get('/', function(req, res) {
     res.render("index");
 });
 
+app.get('/index', function(req,res) {
+    res.render("index");
+});
+
 app.get('/login', function(req,res) {
     res.render("login");
+});
+
+app.get('/applyStudy', function(req,res) {
+    res.render("applyStudy");
+});
+
+app.get('/facilities', function(req,res) {
+    res.render("facilities");
+});
+
+app.get('/instrument', function(req,res) {
+    res.render("instrument");
+});
+
+app.get('/signup', function(req,res) {
+    res.render("signup");
+});
+
+app.get('/Petition', function(req,res) {
+    res.render("Petition");
 });
 
 //회원가입하기 버튼을 눌렀을 때
