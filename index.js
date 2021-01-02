@@ -23,9 +23,6 @@ app.use(express.urlencoded({extended:false}));
 //JSON 본문 구문 분석 (API 클라이언트에서 보낸대로)
 app.use(express.json());
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-
 app.set('view engine', 'hbs');
 
 db.connect(function(err) {
@@ -58,6 +55,8 @@ app.post('/process/signup', function(req, res) {
         
         return;
     } 
+
+    
 
     
 });
