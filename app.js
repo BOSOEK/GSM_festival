@@ -3,6 +3,7 @@ const path = require('path');
 const mysql = require('mysql');
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
 
 const app = express();
 
@@ -34,14 +35,25 @@ db.connect(function(err) {
 })
 
 app.get('/', function(req, res) {
-    res.status(200).sendFile(__dirname + "/html/index.html");
+    res.render("index");
+});
+
+app.get('/login', function(req,res) {
+    res.render("login");
 });
 
 //회원가입하기 버튼을 눌렀을 때
 app.post('/process/signup', function(req, res) {
-    var {id, password, name, discord, github} = req.body;
-
+    var {id, password, name, major} = req.body;
+    
     id *= 1;
+
+    if(!id || !password || !name || !major) {
+        document.getElementById("error").innerHTML = "정보를 모두 입력하여 주세요.";
+    } else {
+
+    }
+
     var checkId = id;
     if(checkId/1000 > 3 || cheekId/1000 < 1) {
         return;
