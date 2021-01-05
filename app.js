@@ -4,8 +4,10 @@ const mysql = require('mysql');
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
+const cookieParser = require('cookie-parser');
 
 const app = express();
+app.use(cookieParser());
 
 app.use(express.static(__dirname + '/Image'));
 app.use(express.static(__dirname + '/html'));
@@ -34,6 +36,7 @@ db.connect(function(err) {
     }
 })
 
+//페이지들 연결
 app.get('/', function(req, res) {
     res.render("index");
 });
@@ -69,35 +72,36 @@ app.get('/Petition', function(req,res) {
 //회원가입하기 버튼을 눌렀을 때
 app.post('/process/signup', function(req, res) {
     var {id, password, name, major} = req.body;
-    
     id *= 1;
-
-    if(!id || !password || !name || !major) {
-        document.getElementById("error").innerHTML = "정보를 모두 입력하여 주세요.";
-    } else {
-
-    }
-
-    var checkId = id;
-    if(checkId/1000 > 3 || cheekId/1000 < 1) {
-        return;
-    }
-    checkId = id%1000;
-    if(checkId/100>4 || checkId < 1) {
-        return;
-    }
-    checkId = id%100;
-    if(checkId/10>2 || checkId<0) {
-        
-        return;
-    } 
-
-    
-
-    
+    var sql = "INSERT INTO member(id, pw, name, major) VALUES(?, ?, ?, ?)";
+    var params = [id, password, name, major];
+    db.query(sql, params, function(err, rows, fields) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.redirect('/login');
+        }
+    });
 });
 
-//app.use('/', require('./script/pages.js'));
+//로그인 하기 버튼을 눌렀을 때
+app.post('/process/login', function(req, res) {
+    var id = req.body.id;
+    var password = req.body.password;
+    id *= 1;
+    var sql = "select * from member where id = ? and pw = ?";
+    
+    db.query(sql, [id, password],function(err, result, field) {
+        if(err) {
+            console.log(err);
+        }
+        if(result.length > 0) {
+            res.cookie({class : result[0].id, name : result[0].name, major : result[0].major})
+            res.redirect('/index');
+        }
+    });
+
+});
 
 http.createServer(app).listen(9996, '172.30.1.58', function() {
     console.log("서버가 시작됨");

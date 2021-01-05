@@ -175,11 +175,11 @@
     <article>
         <section id="sec1">
             <main>
-                <form action="login">
+                <form action="/process/login" method="POST">
                     <a href="/index" id="GSM_logo"><img src="./GSM.PNG" alt="GSM_logo"></a>
                     <div>
-                        <input type="id" class="input" placeholder="아이디"><br>
-                        <input type="password" class="input" placeholder="비밀번호" style="margin-bottom: 25px;"><br>
+                        <input type="id" class="input" name="id" placeholder="아이디"><br>
+                        <input type="password" class="input" name="password" placeholder="비밀번호" style="margin-bottom: 25px;"><br>
                         <a href="/signup" style="color: black; margin-left: 320px;">회원가입 | signup</a><br>
                         <input type="submit" value="로그인" id="login_btn">
                     </div>

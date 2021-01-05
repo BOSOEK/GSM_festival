@@ -176,14 +176,13 @@
     <article>
         <section id="sec1">
             <main>
-                <form action="/process/signup" method="post">
+                <form action="/process/signup" method="POST">
                     <a href="/index" id="GSM_logo"><img src="./GSM.PNG" alt="GSM_logo"></a>
                     <div>
-                        <p id="error"></p>
-                        <input type="id" class="input" placeholder="학년/반/번호" name="id"><br>
-                        <input type="password" class="input" placeholder="비밀번호" name="password"><br>
-                        <input type="text" class="input" placeholder="이름" name="name"><br>
-                        <input type="text" class="input" placeholder="전공" name="major"><br>
+                        <input type="id" class="input" placeholder="학년/반/번호" id="sign_id" name="id"><br>
+                        <input type="password" class="input" placeholder="비밀번호" id="sign_password" name="password"><br>
+                        <input type="text" class="input" placeholder="이름" id="sign_name" name="name"><br>
+                        <input type="text" class="input" placeholder="전공" id="sign_major" name="major"><br>
                         <a href="/login" style="color: black; margin-left: 320px;">로그인 | login</a><br>
                         <input type="submit" value="회원가입" id="login_btn">
                     </div>
