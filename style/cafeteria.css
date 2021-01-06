@@ -63,7 +63,7 @@ nav {
     height: 100%;
     width: 40%;
     background-color: rgba(24, 42, 82, 0.9);
-    margin-top: -780px;
+    margin-top: -660px;
     position: absolute;
     margin-left: 100%;
     z-index: 10;
@@ -78,6 +78,7 @@ nav {
     height: 350px;
     margin-bottom: 5%;
     font-family: 'Black Han Sans', sans-serif;
+    text-align: left;
 }
 .h2 {
     width: 300px;
@@ -98,8 +99,8 @@ main {
     justify-content: space-between;
     background-color: white;
     width: 1400px;
-    height: 550px;
-    margin: 100px auto 0 auto;
+    height: 500px;
+    margin: 30px auto 0 auto;
     border-top-left-radius: 60px 60px;
     border-top-right-radius: 60px 60px;
     border-bottom-left-radius: 60px 60px;

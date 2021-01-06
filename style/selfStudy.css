@@ -1,0 +1,124 @@
+/*초기화===============================*/
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    text-decoration: none;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/*header==========================================*/
+header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+}
+nav {
+    display: flex;
+    width: 96%;
+    height: 100px;
+    justify-content: space-between;
+}
+#GSM_logo img {
+    width: 150px;
+    height: 55px;
+}
+#GSM_logo {
+    margin-left: 4%;
+    margin-top: 1%;
+}
+#list_icon {
+    margin-top: 2.3%;
+}
+#list_icon img {
+    width: 25px;
+    height: auto;
+}
+#hiddin_list {
+    width: 0px;
+    height: 0px;
+}
+
+
+/*article===============================================================*/
+#sec1 {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background-color: rgb(41, 41, 90);
+}
+
+#right_hiddin {
+    height: 100%;
+    width: 40%;
+    background-color: rgba(24, 42, 82, 0.9);
+    margin-top: -660px;
+    position: absolute;
+    margin-left: 100%;
+    z-index: 10;
+}
+
+
+/*목록 버튼 누르면 오른쪽 히든 창 나오기*/
+
+
+#right_hiddin_ul {
+    margin-top: 18%;
+    height: 350px;
+    margin-bottom: 5%;
+    font-family: 'Black Han Sans', sans-serif;
+    text-align: left;
+}
+.h2 {
+    width: 300px;
+    font-size: 40px;
+    margin-bottom: 25px;
+    padding: 10px 0px 10px 200px;
+}
+.h2 img {
+    width: 30px;
+    height: auto;
+}
+.h2:hover {
+    background-color: rgb(61, 60, 95);
+}
+
+main {
+    text-align: center;
+    background-color: white;
+    width: 1300px;
+    height: 500px;
+    margin: 30px auto 0 auto;
+    border-top-left-radius: 60px 60px;
+    border-top-right-radius: 60px 60px;
+    border-bottom-left-radius: 60px 60px;
+    border-bottom-right-radius: 60px 60px;
+}
+.side {
+    width: 300px;
+    height: 300px;
+    background-color: rgb(216, 216, 218);
+    border-top-left-radius: 30px 30px;
+    border-top-right-radius: 30px 30px;
+    border-bottom-left-radius: 30px 30px;
+    border-bottom-right-radius: 30px 30px;
+}
+.side li {
+    font-size: 25px;
+}
+.subtitle {
+    font-size: 35px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}

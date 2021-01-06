@@ -69,6 +69,13 @@ app.get('/Petition', function(req,res) {
     res.render("Petition");
 });
 
+app.get('/log_index', function(req,res) {
+    res.render("log_index");
+});
+
+var gclass, sname;
+
+
 //회원가입하기 버튼을 눌렀을 때
 app.post('/process/signup', function(req, res) {
     var {id, password, name, major} = req.body;
@@ -79,6 +86,8 @@ app.post('/process/signup', function(req, res) {
         if(err) {
             console.log(err);
         } else {
+            gclass = id;
+            gname = name;
             res.redirect('/login');
         }
     });
@@ -97,7 +106,7 @@ app.post('/process/login', function(req, res) {
         }
         if(result.length > 0) {
             res.cookie({class : result[0].id, name : result[0].name, major : result[0].major})
-            res.redirect('/index');
+            res.redirect('/log_index');
         }
     });
 
