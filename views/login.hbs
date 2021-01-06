@@ -40,12 +40,15 @@
             justify-content: space-between;
         }
         #GSM_logo img {
-            width: 150px;
-            height: 55px;
+            width: 70px;
+            height: auto;
         }
         #GSM_logo {
-            margin-left: 4%;
-            margin-top: 1%;
+            margin-left: 0%;
+            margin-top: 0%;
+        }
+        #logoP {
+            font-size: 40px;
         }
         #list_icon {
             margin-top: 2.3%;
@@ -65,7 +68,9 @@
             height: 100vh;
             overflow: hidden;
             position: relative;
-            background-color: rgb(235, 233, 233);
+            background-image: url('/loginBackground.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         #right_hiddin {
@@ -146,14 +151,27 @@
         }
         main {
             text-align: center;
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            width: 1000px;
+            height: 560px;
+            margin: auto;
+            margin-top: 1%;
+            border-top-left-radius: 30px 30px;
+            border-top-right-radius: 30px 30px;
+            border-bottom-left-radius: 30px 30px;
+            border-bottom-right-radius: 30px 30px;
         }
         form {
-            margin: 10% auto 0 auto;
+            margin-top: 8%;
+            margin-right: 10%;
         }
         .input {
             height: 50px;
-            width: 430px;
-            border: 1px solid gray;
+            width: 350px;
+            border: none;
+            border-bottom: solid 2px rgb(33, 33, 95);
             margin-top: 5px;
             margin-bottom: 5px;
             font-size: 15px;
@@ -162,27 +180,46 @@
         }
         #login_btn {
             height: 50px;
-            width: 450px;
-            background-color: rgb(45, 219, 88);
+            width: 350px;
+            background-color: rgb(47, 54, 119);
             border: none;
             font-size: 15px;
             font-weight: bold;
             margin-top: 25px;
+            border-top-left-radius: 30px 30px;
+            border-top-right-radius: 30px 30px;
+            border-bottom-left-radius: 30px 30px;
+            border-bottom-right-radius: 30px 30px;
+            margin-bottom: 20px;
+        }
+        #loginImg img {
+            margin-left: 25%;
+            margin-top: 25%;
+            width: 350px;
+            height: auto;
+        }
+        #sign:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <article>
         <section id="sec1">
+            <a href="/index"><img style="margin-left:50px; margin-top:20px; width: 150px; height: 55px;" src="./GSM.PNG"></a>
             <main>
+                <div id="loginImg">
+                    <img src="/loginImage.jpg" alt="sdfas">
+                </div>
                 <form action="/process/login" method="POST">
-                    <a href="/index" id="GSM_logo"><img src="./GSM.PNG" alt="GSM_logo"></a>
+                    <a href="/index" id="GSM_logo"><img src="./login_title.png" alt="GSM_logo"></a>
+                    <p id="logoP"><strong>WELCOME</strong></p>
                     <div>
-                        <input type="id" class="input" name="id" placeholder="아이디"><br>
-                        <input type="password" class="input" name="password" placeholder="비밀번호" style="margin-bottom: 25px;"><br>
-                        <a href="/signup" style="color: black; margin-left: 320px;">회원가입 | signup</a><br>
-                        <input type="submit" value="로그인" id="login_btn">
+                        <input type="id" class="input" name="id" placeholder="id"><br>
+                        <input type="password" class="input" name="password" placeholder="password" style="margin-bottom: 25px;"><br>
+                        <input style="color: white; display:inline;" type="submit" value="LOGIN" id="login_btn">
                     </div>
+                    <a href="/signup" id="sign" style="display: inline; color:black; margin-top:50px;">SIGNUP</a>
                 </form>
             </main>
         </section>

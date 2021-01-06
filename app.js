@@ -12,7 +12,7 @@ app.use(cookieParser());
 app.use(express.static(__dirname + '/Image'));
 app.use(express.static(__dirname + '/html'));
 app.use(express.static(__dirname + '/style'));
-app.use(express.static(__dirname + '/script'));
+app.use(express.static(__dirname + '/scripts'));
 
 const db = mysql.createConnection( {
     host: '192.168.154.1',
@@ -49,16 +49,16 @@ app.get('/login', function(req,res) {
     res.render("login");
 });
 
-app.get('/applyStudy', function(req,res) {
-    res.render("applyStudy");
+app.get('/selfStudy', function(req,res) {
+    res.render("selfStudy");
 });
 
 app.get('/facilities', function(req,res) {
     res.render("facilities");
 });
 
-app.get('/instrument', function(req,res) {
-    res.render("instrument");
+app.get('/cafeteria', function(req,res) {
+    res.render("cafeteria");
 });
 
 app.get('/signup', function(req,res) {

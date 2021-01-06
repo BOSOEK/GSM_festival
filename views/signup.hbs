@@ -40,12 +40,15 @@
             justify-content: space-between;
         }
         #GSM_logo img {
-            width: 150px;
-            height: 55px;
+            width: 70px;
+            height: auto;
         }
         #GSM_logo {
-            margin-left: 4%;
-            margin-top: 1%;
+            margin-left: 0%;
+            margin-top: 0%;
+        }
+        #logoP {
+            font-size: 40px;
         }
         #list_icon {
             margin-top: 2.3%;
@@ -65,7 +68,9 @@
             height: 100vh;
             overflow: hidden;
             position: relative;
-            background-color: rgb(235, 233, 233);
+            background-image: url('/loginBackground.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         #right_hiddin {
@@ -146,15 +151,27 @@
         }
         main {
             text-align: center;
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            width: 1000px;
+            height: 560px;
+            margin: auto;
+            margin-top: 1%;
+            border-top-left-radius: 30px 30px;
+            border-top-right-radius: 30px 30px;
+            border-bottom-left-radius: 30px 30px;
+            border-bottom-right-radius: 30px 30px;
         }
         form {
-            margin-top: 5%;
+            margin-top: 8%;
+            margin-right: 10%;
         }
         .input {
             height: 50px;
-            width: 430px;
+            width: 350px;
             border: none;
-            border-bottom: 1px solid gray;
+            border-bottom: solid 2px rgb(33, 33, 95);
             margin-top: 5px;
             margin-bottom: 5px;
             font-size: 15px;
@@ -163,29 +180,47 @@
         }
         #login_btn {
             height: 50px;
-            width: 450px;
-            background-color: rgb(120, 45, 219);
+            width: 350px;
+            background-color: rgb(47, 54, 119);
             border: none;
             font-size: 15px;
             font-weight: bold;
             margin-top: 25px;
+            border-top-left-radius: 30px 30px;
+            border-top-right-radius: 30px 30px;
+            border-bottom-left-radius: 30px 30px;
+            border-bottom-right-radius: 30px 30px;
+            margin-bottom: 20px;
+        }
+        #loginImg img {
+            margin-left: 25%;
+            margin-top: 25%;
+            width: 350px;
+            height: auto;
+        }
+        #sign:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <article>
         <section id="sec1">
+            <a href="/index"><img style="margin-left:50px; margin-top:20px; width: 150px; height: 55px;" src="./GSM.PNG"></a>
             <main>
+                <div id="loginImg">
+                    <img src="/signup_Img.png" alt="sdfas">
+                </div>
                 <form action="/process/signup" method="POST">
-                    <a href="/index" id="GSM_logo"><img src="./GSM.PNG" alt="GSM_logo"></a>
+                    <p id="logoP" style="font-size: 40px;"><strong>SIGNUP</strong></p>
                     <div>
                         <input type="id" class="input" placeholder="학년/반/번호" id="sign_id" name="id"><br>
                         <input type="password" class="input" placeholder="비밀번호" id="sign_password" name="password"><br>
                         <input type="text" class="input" placeholder="이름" id="sign_name" name="name"><br>
                         <input type="text" class="input" placeholder="전공" id="sign_major" name="major"><br>
-                        <a href="/login" style="color: black; margin-left: 320px;">로그인 | login</a><br>
-                        <input type="submit" value="회원가입" id="login_btn">
+                        <input type="submit" style="color:white;" value="회원가입" id="login_btn">
                     </div>
+                    <a href="/login" id="sign" style="display: inline; color:black; margin-top:50px;">LOGIN</a>
                 </form>
             </main>
         </section>

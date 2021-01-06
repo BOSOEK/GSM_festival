@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSM</title>
+    <link rel="stylesheet" href="./cafeteria.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/index" id="GSM_logo"><img src="./GSM.PNG" alt="GSM_logo"></a>
+            <a href="#" id="list_icon"><img src="./list_icon.png" id="list_icon_img" alt="리스트아이콘"></a>
+        </nav>
+    </header>
+    <article>
+        <section id="sec1">
+            <h1 id="title" style="font-size: 40px; margin-top:80px; color:white;"><img style="width: 40px; height:auto;" src="./eat_png.png"> 급식 메뉴 <img style="width: 40px; height:auto;" src="./eat_png.png"></h1>
+            <main>
+                <div style="margin-left: 6%;">
+                    <h2 class="subtitle" style="color: rgb(0, 0, 0);"><strong>조식</strong></h2>
+                    <aside class="side">
+                        <ul>
+                            <li><strong>백미밥(자율)</strong></li>
+                            <li><strong>소고기버섯죽</strong></li>
+                            <li><strong>울외장아찌무침</strong></li>
+                            <li><strong>비엔나메추리알케찹볶음</strong></li>
+                            <li><strong>배추김치</strong></li>
+                            <li><strong>바나나</strong></li>
+                            <li><strong>콘푸로스트/오레오&백생우유</strong></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div>
+                    <h2 class="subtitle" style="color: rgb(0, 0, 0);"><strong>중식</strong></h2>
+                    <aside class="side">
+                        <ul>
+                            <li><strong>카레덮밥</strong></li>
+                            <li><strong>왕새우무조림</strong></li>
+                            <li><strong>얼갈이무침</strong></li>
+                            <li><strong>닭봉후라이드튀김</strong></li>
+                            <li><strong>깍두기</strong></li>
+                            <li><strong>요구르트</strong></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div style="margin-right: 6%;">
+                    <h2 class="subtitle" style="color: rgb(0, 0, 0);"><strong>석식</strong></h2>
+                    <aside class="side">
+                        <ul>
+                            <li><strong>검정쌀밥</strong></li>
+                            <li><strong>들깨시락국</strong></li>
+                            <li><strong>돼지훈제&소스/무쌈</strong></li>
+                            <li><strong>주꾸미미나리초무침</strong></li>
+                            <li><strong>열무김치</strong></li>
+                            <li><strong>초코칩트위스트파이</strong></li>
+                        </ul>
+                    </aside>
+                </div>
+            </main>
+            <div id="right_hiddin">
+                <ul id="right_hiddin_ul">
+                    <li class="h2" id="h21"><a href="/cafeteria"><img src="./eat_png.png"> Meal</a></li>
+                    <li class="h2" id="h22"><a href="/selfStudy"><img src="./pen_png.png"> Self-study</a></li>
+                    <li class="h2" id="h23"><a href="/facilities"><img src="./school_png.png"> Broken</a></li>
+                    <li class="h2" id="h24"><a href="/Petition"><img src="./petition_png.png"> petition</a></li>
+                    <li class="h2" id="h25"><a href="/login"><img src="./login_png.png"> Login</a></li>
+                </ul>
+            </div>
+        </section>
+    </article>
+    <script type="text/javascript" src="./script_all.js"></script>
+    <script>
+        $('ul').hide();
+        $('h2').hide();
+        $('ul').show(1000);
+        $('h2').show(1000);
+    </script>
+</body>
+</html>
