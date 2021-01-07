@@ -10,7 +10,7 @@ const app = express();
 app.use(cookieParser());
 
 app.use(express.static(__dirname + '/Image'));
-app.use(express.static(__dirname + '/html'));
+app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/style'));
 app.use(express.static(__dirname + '/scripts'));
 
@@ -57,6 +57,10 @@ app.get('/facilities', function(req,res) {
     res.render("facilities");
 });
 
+app.get('/facilitiesafter', function(req,res) {
+    res.render("facillties");
+});
+
 app.get('/cafeteria', function(req,res) {
     res.render("cafeteria");
 });
@@ -73,7 +77,38 @@ app.get('/log_index', function(req,res) {
     res.render("log_index");
 });
 
-var gclass, sname;
+app.get('/selfStudyafter', function(req,res) {
+    res.render("seifStudy");
+});
+
+app.get('/Petitionafter', function(req,res) {
+    res.render("Petltion");
+});
+
+//노트북 대여 버튼을 눌렀을 때
+app.get('/notebook', function(req, res) {
+    var sql = "INSERT INTO notebook(class, name) VALUES(?, ?)";
+    var param = [gclass, gname];
+    db.query(sql, param, function(err, rows, fields) {
+        if(err) {
+            console.log(err);
+        }
+    });
+    res.redirect('/selfStudyafter');
+});
+
+//노트북 대여 취소을 눌렀을 때
+app.get('/notebookafter', function(req, res) {
+    var sql = "DELETE FROM notebook WHERE class = ? and name = ?";
+    var param = [gclass, gname];
+    db.query(sql, param, function(err, rows, fields) {
+        if(err) {
+            console.log(err);
+        }
+        console.log("앙 성공띠");
+    });
+    res.redirect('/selfStudy');
+});
 
 
 //회원가입하기 버튼을 눌렀을 때
@@ -93,6 +128,7 @@ app.post('/process/signup', function(req, res) {
     });
 });
 
+
 //로그인 하기 버튼을 눌렀을 때
 app.post('/process/login', function(req, res) {
     var id = req.body.id;
@@ -105,12 +141,17 @@ app.post('/process/login', function(req, res) {
             console.log(err);
         }
         if(result.length > 0) {
-            res.cookie({class : result[0].id, name : result[0].name, major : result[0].major})
+            gclass = result[0].id;
+            gclass *= 1;
+            gname = result[0].name;
+            gmajor = result[0].major;
             res.redirect('/log_index');
         }
     });
 
 });
+
+var gclass, gname, gmajor;
 
 http.createServer(app).listen(9996, '172.30.1.58', function() {
     console.log("서버가 시작됨");

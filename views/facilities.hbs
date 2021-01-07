@@ -12,30 +12,55 @@
 <body>
     <header>
         <nav>
-            <a href="/index" id="GSM_logo"><img src="./GSM.PNG" alt="GSM_logo"></a>
-            <a href="#" id="list_icon"><img src="./list_icon.png" id="list_icon_img" alt="리스트아이콘"></a>
+            <a href="/log_index" id="GSM_logo"><img src="./GSM.PNG" alt="GSM_logo"></a>
+            <a href="#" class="list_icon"><img src="./list_icon.png" id="list_icon_img" alt="리스트아이콘"></a>
         </nav>
+        
     </header>
     <article>
         <section id="sec1">
+            <h1 id="title" style="font-size: 40px; margin-top:80px; color:white;"><img style="width: 40px; height:auto;" src="./school_png.png"> 불편 시설 신청 <img style="width: 40px; height:auto;" src="./school_png.png"></h1>
+            <img id="school_upper" src="./school_upper.png" alt="sfsefs" style="z-index:5; width: 250px; height:220px; position:absolute; margin-left:15%; margin-top:-8.7%;">
             <div id="right_hiddin">
+                <a href="#" class="list_icon" style="position: absolute; margin-left:203px; margin-top:36px;"><img src="./list_icon_X.png" id="list_icon_img" alt="리스트아이콘"></a>
                 <ul id="right_hiddin_ul">
-                    <li class="h2"><a href="/Instrument">Exercise sequence</a></li>
-                    <li class="h2"><a href="/applyStudy">Self-study</a></li>
-                    <li class="h2_midde"><a href="#" id="h2_hid_img"><img id="up_down_img" src="./down_arrow.png" alt="아래 화살표"> About school life</a> 
-                        <ul id="h2_hiddin">
-                            <li class="h3"><a href="/facilities">Inconvenient facilities</a></li>
-                            <li class="h3"><a href="/Petition">Petition</a></li>
-                        </ul>
-                    </li>
+                    <li class="h2" id="h21"><a href="/cafeteria"><img src="./eat_png.png"> Meal</a></li>
+                    <li class="h2" id="h22"><a href="/selfStudy"><img src="./pen_png.png"> Self-study</a></li>
+                    <li class="h2" id="h23"><a href="/facilities"><img src="./school_png.png"> Broken</a></li>
+                    <li class="h2" id="h24"><a href="/Petition"><img src="./petition_png.png"> petition</a></li>
+                    <li class="h2" id="h25"><a href="/index"><img src="./login_png.png"> Logout</a></li>
                 </ul>
-                <div id="border_radio_div">
-                    <a href="/login" class="border_radio">login</a>
-                    <a href="/signup" class="border_radio">signup</a>
-                </div>
             </div>
+            <main>
+                <div>
+                    <form action="/facilitiesafter">
+                        <input type="text" placeholder="건물명" class="inputA">
+                        <input type="text" placeholder="층" class="inputA">
+                        <input type="text" placeholder="title" class="inputB">
+                        <input type="submit" placeholder="제출" class="inputC"><br>
+                        <input type="text" placeholder="신고 내용" class="inputD">
+                    </form>
+                </div>
+                <div style="margin-top: 20px;">
+                    <p style="color: black; font-size:30px;"><strong>노트북 신청 명단</strong></p>
+                </div>
+            </main>
+            <aside style="text-align: center;">
+                <div class="ffd">
+                    <p class="p"><strong>운동장에 모래 대신 잔디를 심어주세요</strong></p><br>
+                    <p style="font-size: 20px; margin:8px 0;"><strong>운동장 1층</strong></p>
+                    <hr style="height: 1px; margin-bottom:8px; background-color:rgb(55, 55, 58);">
+                    <p style="font-size: 20px;"><strong>이건 불편 시설 테스트 입니다.</strong></p>
+                </div>
+            </aside>
+            
+            <a id="schoolWeb" href="http://gsm.gen.hs.kr/main/main.php"><strong>소마고 홈페이지 바로가기</strong></a>
         </section>
     </article>
     <script type="text/javascript" src="./script_all.js"></script>
+    <script>
+        $('#school_upper').hide();
+        $('#school_upper').show(1000);
+    </script>
 </body>
 </html>

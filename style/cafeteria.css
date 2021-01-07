@@ -56,14 +56,14 @@ nav {
     overflow: hidden;
     position: relative;
     text-align: center;
-    background-color: rgb(41, 41, 90);
+    background-color: rgb(47, 83, 112);
 }
 
 #right_hiddin {
     height: 100%;
     width: 40%;
     background-color: rgba(24, 42, 82, 0.9);
-    margin-top: -660px;
+    margin-top: -721.5px;
     position: absolute;
     margin-left: 100%;
     z-index: 10;
@@ -98,13 +98,19 @@ main {
     display: flex;
     justify-content: space-between;
     background-color: white;
-    width: 1400px;
-    height: 500px;
+    width: 1535px;
+    height: 560px;
     margin: 30px auto 0 auto;
     border-top-left-radius: 60px 60px;
     border-top-right-radius: 60px 60px;
-    border-bottom-left-radius: 60px 60px;
-    border-bottom-right-radius: 60px 60px;
+}
+#schoolWeb {
+    position: absolute;
+    color: white;
+    padding: 10px 10px;
+    background-color: rgb(63, 74, 97);
+    margin-left: 530px;
+    margin-top: -65px;
 }
 .side {
     width: 300px;

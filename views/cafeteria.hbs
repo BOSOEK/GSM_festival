@@ -12,15 +12,16 @@
 <body>
     <header>
         <nav>
-            <a href="/index" id="GSM_logo"><img src="./GSM.PNG" alt="GSM_logo"></a>
+            <a href="/log_index" id="GSM_logo"><img src="./GSM.PNG" alt="GSM_logo"></a>
             <a href="#" id="list_icon"><img src="./list_icon.png" id="list_icon_img" alt="리스트아이콘"></a>
         </nav>
     </header>
     <article>
         <section id="sec1">
             <h1 id="title" style="font-size: 40px; margin-top:80px; color:white;"><img style="width: 40px; height:auto;" src="./eat_png.png"> 급식 메뉴 <img style="width: 40px; height:auto;" src="./eat_png.png"></h1>
+            <img id="school_upper" src="./school_upper.png" alt="sfsefs" style="z-index:5; width: 250px; height:220px; position:absolute; margin-left:15%; margin-top:-8.7%;">
             <main>
-                <div style="margin-left: 6%;">
+                <div style="margin-left: 9%;">
                     <h2 class="subtitle" style="color: rgb(0, 0, 0);"><strong>조식</strong></h2>
                     <aside class="side">
                         <ul>
@@ -48,7 +49,7 @@
                         </ul>
                     </aside>
                 </div>
-                <div style="margin-right: 6%;">
+                <div style="margin-right: 9%;">
                     <h2 class="subtitle" style="color: rgb(0, 0, 0);"><strong>석식</strong></h2>
                     <aside class="side">
                         <ul>
@@ -62,6 +63,7 @@
                     </aside>
                 </div>
             </main>
+            <a id="schoolWeb" href="http://gsm.gen.hs.kr/main/main.php"><strong>소마고 홈페이지 바로가기</strong></a>
             <div id="right_hiddin">
                 <ul id="right_hiddin_ul">
                     <li class="h2" id="h21"><a href="/cafeteria"><img src="./eat_png.png"> Meal</a></li>
@@ -73,12 +75,15 @@
             </div>
         </section>
     </article>
-    <script type="text/javascript" src="./script_all.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
     <script>
         $('ul').hide();
-        $('h2').hide();
+        $('h2').hide();        
+        $('#school_upper').hide();
+
         $('ul').show(1000);
         $('h2').show(1000);
+        $('#school_upper').show(1000);
     </script>
 </body>
 </html>

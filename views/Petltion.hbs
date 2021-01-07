@@ -33,7 +33,7 @@
             </div>
             <main>
                 <div>
-                    <form action="/Petitionafter">
+                    <form action="/Petition">
                         <input type="text" placeholder="청원 시작 날짜" class="inputA">
                         <input type="text" placeholder="청원 종료 날짜" class="inputA">
                         <input type="submit" placeholder="제출" class="inputC"><br>
@@ -46,6 +46,20 @@
                 </div>
             </main>
             <aside style="text-align: center;">
+                <div class="ffd">
+                    <p class="p"><strong>전공 연습 시간을 더 주세요</strong></p>
+                    <div style="width: 400px; margin:30px auto; height:40px; line-height:40px; background:rgb(194, 194, 194); border:rgb(161, 160, 160) solid 2px;">
+                        <p style="display: inline-block; margin-right:20px;"><strong>청원시작 2020-01-07</strong></p>
+                        <p style="display: inline-block;"><strong>청원마감 2020-01-17</strong></p>
+                    </div>
+                    <p style="font-size: 20px; margin:8px 0;"><strong>소마고는 특성화 고등학교인 만큼 전공이 중요하다고 생각합니다. 그렇기에 전공 연습 시간을 조금 더 주세요.</strong></p>
+                    <div style="float:right; width:100px; display:flex; justify-content: space-between; margin-top:20px;">
+                        <p id="count">0</p>
+                        <a href="#" id="buttonA"><img style="width: 20px; height:auto;" src="./goodimg.jpg"></a> 
+                        <p id="countB">0</p>
+                        <a href="#"><img style="width: 20px; height:auto;" src="./bedimg.jpg"></a>
+                    </div>
+                </div>
             </aside>
             
             <a id="schoolWeb" href="http://gsm.gen.hs.kr/main/main.php"><strong>소마고 홈페이지 바로가기</strong></a>
@@ -55,6 +69,9 @@
     <script>
         $('#school_upper').hide();
         $('#school_upper').show(1000);
+        $('#buttonA').click(function() {
+            $('#count').text('1');
+        });
     </script>
 </body>
 </html>
